@@ -44,5 +44,5 @@ jobs:
     - name: Publish to GitHub Packages
       run: ./gradlew publish --info
       env:
-        USERNAME: ${{ secrets.COMMON_USERNAME }}
-        TOKEN: ${{ secrets.COMMON_TOKEN }}
+        COMMON_USERNAME: ${{ secrets.COMMON_USERNAME }}
+        COMMON_TOKEN: ${{ secrets.COMMON_TOKEN }}
