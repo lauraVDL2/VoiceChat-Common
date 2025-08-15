@@ -10,8 +10,8 @@ plugins {
     `java-library`
 }
 
-group = "shared.lib"
-version = "1.0-SNAPSHOT"
+/*group = "shared.lib"
+version = "1.0-SNAPSHOT"*/
 
 repositories {
     // Use Maven Central for resolving dependencies.
