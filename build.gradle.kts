@@ -6,13 +6,31 @@
  */
 
 plugins {
-    `maven-publish`
-    // Apply the java-library plugin for API and implementation separation.
-    `java-library`
+    id("java-library")
+    id("maven-publish")
 }
 
-/*group = "shared.lib"
-version = "1.0-SNAPSHOT"*/
+group = "shared-lib"
+version = "1.0"
+
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            artifactId = "voicechat-common"
+        }
+    }
+    repositories {
+        maven {
+            url = uri("https://maven.pkg.github.com/lauraVDL2/VoiceChat-Common")
+            credentials {
+                username = System.getenv("COMMON_USERNAME")
+                password = System.getenv("COMMON_TOKEN")
+            }
+        }
+    }
+}
 
 repositories {
     // Use Maven Central for resolving dependencies.
