@@ -1,13 +1,9 @@
 package org.shared;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 
-@Getter
-@Setter
 @NodeEntity
 public class User {
 
@@ -22,8 +18,49 @@ public class User {
 
     private String emailAddress;
 
+    public User() {}
+
+    public User(String emailAddress, String displayName, String password) {
+        this.displayName = displayName;
+        this.emailAddress = emailAddress;
+        this.password = password;
+    }
+
     public User(String emailAddress, String password) {
         this.emailAddress = emailAddress;
         this.password = password;
     }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
 }
