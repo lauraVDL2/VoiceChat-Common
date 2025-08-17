@@ -73,10 +73,10 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
+/*dependencies {
     implementation("org.neo4j:neo4j-ogm-core:4.0.19")
     implementation("org.neo4j:neo4j-ogm-bolt-driver:4.0.19")
-}
+}*/
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {

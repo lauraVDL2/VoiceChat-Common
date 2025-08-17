@@ -1,5 +1,5 @@
 package org.shared;
 
 public enum MessageType {
-    USER
+    USER_CREATE
 }

@@ -1,14 +1,8 @@
 package org.shared;
 
-import org.neo4j.ogm.annotation.GeneratedValue;
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.NodeEntity;
-
-@NodeEntity
 public class User {
 
-    @Id @GeneratedValue
-    private Long id;
+    private String id;
 
     private String userName;
 
@@ -61,6 +55,10 @@ public class User {
 
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+    public String getId() {
+        return this.id;
     }
 
 }
