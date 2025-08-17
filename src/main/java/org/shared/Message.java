@@ -4,13 +4,13 @@ public class Message {
 
     private MessageType messageType;
 
-    private String msg;
+    private String payload;
 
     public Message() {}
 
-    public Message(MessageType messageType, String msg) {
+    public Message(MessageType messageType, String payload) {
         this.messageType = messageType;
-        this.msg = msg;
+        this.payload = payload;
     }
 
     public MessageType getMessageType() {
@@ -21,12 +21,12 @@ public class Message {
         this.messageType = messageType;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getPayload() {
+        return payload;
     }
 
     public void setMsg(String msg) {
-        this.msg = msg;
+        this.payload = payload;
     }
 
 }

@@ -4,6 +4,16 @@ public class ServerResponse {
     private ServerResponseStatus serverResponseStatus;
     private ServerResponseMessage serverResponseMessage;
 
+    public String getPayload() {
+        return payload;
+    }
+
+    public void setPayload(String payload) {
+        this.payload = payload;
+    }
+
+    private String payload;
+
     public ServerResponseMessage getServerResponseMessage() {
         return serverResponseMessage;
     }

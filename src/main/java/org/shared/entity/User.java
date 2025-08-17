@@ -1,7 +1,12 @@
-package org.shared;
+package org.shared.entity;
 
+import org.neo4j.ogm.annotation.Id;
+import org.neo4j.ogm.annotation.NodeEntity;
+
+@NodeEntity
 public class User {
 
+    @Id
     private String id;
 
     private String userName;
