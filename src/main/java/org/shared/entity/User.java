@@ -9,7 +9,7 @@ public class User {
 
     @Id
     @GeneratedValue
-    private String id;
+    private Long id;
 
     private String userName;
 
@@ -64,7 +64,7 @@ public class User {
         this.emailAddress = emailAddress;
     }
 
-    public String getId() {
+    public Long getId() {
         return this.id;
     }
 
