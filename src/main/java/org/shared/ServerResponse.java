@@ -3,6 +3,16 @@ package org.shared;
 public class ServerResponse {
     private ServerResponseStatus serverResponseStatus;
     private ServerResponseMessage serverResponseMessage;
+    private String payload;
+    private String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     public String getPayload() {
         return payload;
@@ -11,8 +21,6 @@ public class ServerResponse {
     public void setPayload(String payload) {
         this.payload = payload;
     }
-
-    private String payload;
 
     public ServerResponseMessage getServerResponseMessage() {
         return serverResponseMessage;
