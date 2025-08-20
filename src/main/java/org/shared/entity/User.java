@@ -19,6 +19,8 @@ public class User {
 
     private String emailAddress;
 
+    private String avatar;
+
     public User() {}
 
     public User(String emailAddress, String displayName, String password) {
@@ -66,6 +68,14 @@ public class User {
 
     public Long getId() {
         return this.id;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
 }
