@@ -3,6 +3,7 @@ package org.shared.entity;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.Property;
 
 @NodeEntity
 public class User {
@@ -11,14 +12,19 @@ public class User {
     @GeneratedValue
     private Long id;
 
+    @Property(name = "userName")
     private String userName;
 
+    @Property(name = "displayName")
     private String displayName;
 
+    @Property(name = "password")
     private String password;
 
+    @Property(name = "emailAddress")
     private String emailAddress;
 
+    @Property(name = "avatar")
     private String avatar;
 
     public User() {}
