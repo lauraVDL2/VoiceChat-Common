@@ -1,9 +1,8 @@
 package org.shared.entity;
 
-import org.neo4j.ogm.annotation.GeneratedValue;
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.NodeEntity;
-import org.neo4j.ogm.annotation.Property;
+import org.neo4j.ogm.annotation.*;
+
+import java.util.List;
 
 @NodeEntity
 public class User {
@@ -27,6 +26,9 @@ public class User {
     @Property(name = "avatar")
     private String avatar;
 
+    @Relationship(type = "SENT", direction = Relationship.Direction.UNDIRECTED)
+    List<Message> messages;
+
     public User() {}
 
     public User(String emailAddress, String displayName, String password) {
@@ -38,6 +40,14 @@ public class User {
     public User(String emailAddress, String password) {
         this.emailAddress = emailAddress;
         this.password = password;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
     }
 
     public String getUserName() {
