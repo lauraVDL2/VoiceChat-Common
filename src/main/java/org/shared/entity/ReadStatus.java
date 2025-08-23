@@ -1,5 +1,6 @@
 package org.shared.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.neo4j.ogm.annotation.EndNode;
 import org.neo4j.ogm.annotation.Property;
 import org.neo4j.ogm.annotation.RelationshipEntity;
@@ -12,9 +13,11 @@ public class ReadStatus {
     private boolean isRead;
 
     @StartNode
+    @JsonBackReference
     private Message message;
 
     @EndNode
+    @JsonBackReference
     private User user;
 
     public ReadStatus() {

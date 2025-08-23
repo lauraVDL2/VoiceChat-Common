@@ -1,5 +1,6 @@
 package org.shared.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.neo4j.ogm.annotation.*;
 
 import java.time.LocalDateTime;
@@ -18,8 +19,9 @@ public class Message {
     @Property("content")
     private String content;
 
-    /*@Relationship(value = "READ_BY", direction = Relationship.Direction.INCOMING)
-    private List<ReadStatus> readStatuses = new ArrayList<>();*/
+    @Relationship(value = "READ_BY", direction = Relationship.Direction.INCOMING)
+    @JsonManagedReference
+    private List<ReadStatus> readStatuses = new ArrayList<>();
 
     public Message() {
 
