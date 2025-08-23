@@ -2,8 +2,15 @@ package org.shared;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Test;
+import org.shared.entity.Conversation;
+import org.shared.entity.Message;
 import org.shared.entity.User;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,6 +25,26 @@ public class SerializationTest {
         assertNotNull(json);
         User user1 = objectMapper.readValue(json, User.class);
         assertEquals(user1.getDisplayName(), "toto");
+    }
+
+    @Test
+    void serializeConversation() throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
+        Conversation conversation = new Conversation();
+        User user1 = new User();
+        user1.setDisplayName("toto");
+        User user2 = new User();
+        user2.setDisplayName("tata");
+        Message message = new Message();
+        message.setTime(LocalDateTime.now());
+        message.setContent("toto");
+        user1.setMessages(List.of(message));
+        conversation.setParticipants(Set.of(user1, user2));
+        conversation.setMessages(List.of(message));
+        String json = objectMapper.writeValueAsString(conversation);
+        assertNotNull(json);
+        Conversation conversation1 = objectMapper.readValue(json, Conversation.class);
+        assertEquals(conversation1.getMessages().get(0).getContent(), "toto");
     }
 
 }

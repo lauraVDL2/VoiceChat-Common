@@ -36,8 +36,8 @@ public class User {
     @Relationship(type = "SENT", direction = Relationship.Direction.UNDIRECTED)
     private List<Message> messages = new ArrayList<>();
 
-    @Relationship(type = "IN_CONVERSATION")
-    private List<Conversation> conversation = new ArrayList<>();
+    /*@Relationship(type = "IN_CONVERSATION")
+    private List<Conversation> conversation = new ArrayList<>();*/
 
     @JsonCreator
     public User() {}
@@ -53,13 +53,13 @@ public class User {
         this.password = password;
     }
 
-    public List<Conversation> getConversation() {
+    /*public List<Conversation> getConversation() {
         return conversation;
     }
 
     public void setConversation(List<Conversation> conversation) {
         this.conversation = conversation;
-    }
+    }*/
 
     public List<Message> getMessages() {
         return messages;
