@@ -76,6 +76,13 @@ repositories {
 dependencies {
     implementation("org.neo4j:neo4j-ogm-core:4.0.19")
     implementation("org.neo4j:neo4j-ogm-bolt-driver:4.0.19")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.2")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
