@@ -1,5 +1,6 @@
 package org.shared.entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import org.neo4j.ogm.annotation.*;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class User {
     @Relationship(type = "IN_CONVERSATION")
     private List<Conversation> conversation = new ArrayList<>();
 
+    @JsonCreator
     public User() {}
 
     public User(String emailAddress, String displayName, String password) {

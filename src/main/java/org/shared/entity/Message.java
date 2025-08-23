@@ -1,5 +1,6 @@
 package org.shared.entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.neo4j.ogm.annotation.*;
 
@@ -23,6 +24,7 @@ public class Message {
     @JsonManagedReference
     private List<ReadStatus> readStatuses = new ArrayList<>();
 
+    @JsonCreator
     public Message() {
 
     }

@@ -1,5 +1,6 @@
 package org.shared.entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
@@ -17,6 +18,7 @@ public class Conversation {
     @Relationship(type = "PARTICIPATES_IN", direction = Relationship.Direction.OUTGOING)
     private Set<User> participants = new HashSet<>();
 
+    @JsonCreator
     public Conversation() {}
 
     public Conversation(List<Message> messages, Set<User> participants) {
