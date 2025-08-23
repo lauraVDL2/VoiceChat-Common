@@ -14,11 +14,11 @@ public class ReadStatus {
     private boolean isRead;
 
     @StartNode
-    @JsonBackReference
+    @JsonBackReference("message")
     private Message message;
 
     @EndNode
-    @JsonBackReference
+    @JsonBackReference("user")
     private User user;
 
     @JsonCreator

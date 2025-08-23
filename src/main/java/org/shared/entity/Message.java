@@ -21,7 +21,7 @@ public class Message {
     private String content;
 
     @Relationship(value = "READ_BY", direction = Relationship.Direction.INCOMING)
-    @JsonManagedReference
+    @JsonManagedReference("readStatuses")
     private List<ReadStatus> readStatuses = new ArrayList<>();
 
     @JsonCreator
