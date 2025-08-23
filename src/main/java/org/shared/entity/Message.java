@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NodeEntity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Message {
     @Id
     @GeneratedValue
@@ -20,6 +21,7 @@ public class Message {
     private String content;
 
     @Relationship(value = "READ_BY", direction = Relationship.Direction.INCOMING)
+    @JsonManagedReference("messageReference")
     private List<ReadStatus> readStatuses = new ArrayList<>();
 
     public Message() {

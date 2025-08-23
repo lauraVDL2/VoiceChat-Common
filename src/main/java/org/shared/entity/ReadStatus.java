@@ -1,9 +1,13 @@
 package org.shared.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.neo4j.ogm.annotation.*;
 
-@RelationshipEntity
+@RelationshipEntity(type = "READ_BY")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class ReadStatus {
 
     @Id
@@ -14,9 +18,11 @@ public class ReadStatus {
     private boolean isRead;
 
     @StartNode
+    @JsonBackReference("messageReference")
     private Message message;
 
     @EndNode
+    @JsonBackReference("userReference")
     private User user;
 
     public ReadStatus() {
@@ -52,4 +58,9 @@ public class ReadStatus {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public Long getId() {
+        return id;
+    }
+
 }

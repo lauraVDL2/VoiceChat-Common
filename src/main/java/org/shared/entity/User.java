@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NodeEntity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class User {
 
     @Id

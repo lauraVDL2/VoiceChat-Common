@@ -1,7 +1,9 @@
 package org.shared.entity;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
@@ -13,6 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 @NodeEntity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Conversation {
 
     @Id
@@ -46,5 +49,9 @@ public class Conversation {
 
     public void setMessages(List<Message> messages) {
         this.messages = messages;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

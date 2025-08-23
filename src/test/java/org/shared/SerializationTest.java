@@ -6,6 +6,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Test;
 import org.shared.entity.Conversation;
 import org.shared.entity.Message;
+import org.shared.entity.ReadStatus;
 import org.shared.entity.User;
 
 import java.time.LocalDateTime;
@@ -29,7 +30,8 @@ public class SerializationTest {
 
     @Test
     void serializeConversation() throws JsonProcessingException {
-        ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
+        ObjectMapper objectMapper = new ObjectMapper()
+                .registerModule(new JavaTimeModule());
         Conversation conversation = new Conversation();
         User user1 = new User();
         user1.setDisplayName("toto");
@@ -39,6 +41,10 @@ public class SerializationTest {
         message.setTime(LocalDateTime.now());
         message.setContent("toto");
         user1.setMessages(List.of(message));
+
+        ReadStatus readStatus = new ReadStatus(true, message, user1);
+        ReadStatus readStatus1 = new ReadStatus(false, message, user2);
+        message.setReadStatuses(List.of(readStatus1, readStatus));
         conversation.setParticipants(Set.of(user1, user2));
         conversation.setMessages(List.of(message));
         String json = objectMapper.writeValueAsString(conversation);
