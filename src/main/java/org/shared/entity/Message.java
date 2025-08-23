@@ -18,8 +18,8 @@ public class Message {
     @Property("content")
     private String content;
 
-    @Relationship(value = "READ_BY", direction = Relationship.Direction.INCOMING)
-    private List<ReadStatus> readStatuses = new ArrayList<>();
+    /*@Relationship(value = "READ_BY", direction = Relationship.Direction.INCOMING)
+    private List<ReadStatus> readStatuses = new ArrayList<>();*/
 
     public Message() {
 
@@ -28,14 +28,6 @@ public class Message {
     public Message(LocalDateTime time, String content) {
         this.time = time;
         this.content = content;
-    }
-
-    public List<ReadStatus> getReadStatuses() {
-        return readStatuses;
-    }
-
-    public void setReadStatuses(List<ReadStatus> readStatuses) {
-        this.readStatuses = readStatuses;
     }
 
     public String getContent() {
