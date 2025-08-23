@@ -1,17 +1,18 @@
 package org.shared.entity;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 import org.neo4j.ogm.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @NodeEntity
 public class Message {
     @Id
     @GeneratedValue
+    @JsonProperty("id")
     private Long id;
 
     @Property("time")
