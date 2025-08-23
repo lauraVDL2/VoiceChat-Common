@@ -1,6 +1,9 @@
 package org.shared.entity;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.neo4j.ogm.annotation.GeneratedValue;
+import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
@@ -11,6 +14,11 @@ import java.util.Set;
 
 @NodeEntity
 public class Conversation {
+
+    @Id
+    @GeneratedValue
+    @JsonProperty("id")
+    private Long id;
 
     @Relationship(type = "CONTAINS", direction = Relationship.Direction.INCOMING)
     private List<Message> messages = new ArrayList<>();
