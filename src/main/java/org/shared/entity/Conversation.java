@@ -11,7 +11,7 @@ import java.util.Set;
 @NodeEntity
 public class Conversation {
 
-    @Relationship(type = "HAS_MESSAGES", direction = Relationship.Direction.INCOMING)
+    @Relationship(type = "CONTAINS", direction = Relationship.Direction.INCOMING)
     private List<Message> messages = new ArrayList<>();
 
     @Relationship(type = "PARTICIPATES_IN", direction = Relationship.Direction.OUTGOING)

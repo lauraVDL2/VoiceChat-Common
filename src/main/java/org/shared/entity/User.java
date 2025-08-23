@@ -2,6 +2,7 @@ package org.shared.entity;
 
 import org.neo4j.ogm.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @NodeEntity
@@ -27,7 +28,10 @@ public class User {
     private String avatar;
 
     @Relationship(type = "SENT", direction = Relationship.Direction.UNDIRECTED)
-    List<Message> messages;
+    private List<Message> messages = new ArrayList<>();
+
+    @Relationship(type = "IN_CONVERSATION")
+    private List<Conversation> conversation = new ArrayList<>();
 
     public User() {}
 
@@ -40,6 +44,14 @@ public class User {
     public User(String emailAddress, String password) {
         this.emailAddress = emailAddress;
         this.password = password;
+    }
+
+    public List<Conversation> getConversation() {
+        return conversation;
+    }
+
+    public void setConversation(List<Conversation> conversation) {
+        this.conversation = conversation;
     }
 
     public List<Message> getMessages() {

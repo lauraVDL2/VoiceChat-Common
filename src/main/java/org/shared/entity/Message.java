@@ -3,48 +3,39 @@ package org.shared.entity;
 import org.neo4j.ogm.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
-@RelationshipEntity
+@NodeEntity
 public class Message {
     @Id
     @GeneratedValue
     private Long id;
 
+    @Property("time")
     private LocalDateTime time;
 
+    @Property("content")
     private String content;
 
-    @StartNode
-    private User sender;
-
-    @EndNode
-    private Conversation conversation;
+    @Relationship(value = "READ_BY", direction = Relationship.Direction.INCOMING)
+    private List<ReadStatus> readStatuses = new ArrayList<>();
 
     public Message() {
 
     }
 
-    public Message(LocalDateTime time, String content, User sender, Conversation conversation) {
+    public Message(LocalDateTime time, String content) {
         this.time = time;
         this.content = content;
-        this.sender = sender;
-        this.conversation = conversation;
     }
 
-    public Conversation getConversation() {
-        return conversation;
+    public List<ReadStatus> getReadStatuses() {
+        return readStatuses;
     }
 
-    public void setConversation(Conversation conversation) {
-        this.conversation = conversation;
-    }
-
-    public User getSender() {
-        return sender;
-    }
-
-    public void setSender(User sender) {
-        this.sender = sender;
+    public void setReadStatuses(List<ReadStatus> readStatuses) {
+        this.readStatuses = readStatuses;
     }
 
     public String getContent() {
