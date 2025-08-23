@@ -51,4 +51,12 @@ public class Message {
     public Long getId() {
         return id;
     }
+
+    public List<ReadStatus> getReadStatuses() {
+        return readStatuses;
+    }
+
+    public void setReadStatuses(List<ReadStatus> readStatuses) {
+        this.readStatuses = readStatuses;
+    }
 }
