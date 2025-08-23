@@ -5,5 +5,6 @@ public enum MessageType {
     USER_LOG_IN,
     USER_SEARCH,
     CONVERSATION_CREATE,
+    CONVERSATION_SEARCH,
     MESSAGE_SEND
 }

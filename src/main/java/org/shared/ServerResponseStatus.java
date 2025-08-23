@@ -2,5 +2,7 @@ package org.shared;
 
 public enum ServerResponseStatus {
     SUCCESS,
-    FAILURE
+    FAILURE,
+    WARNING,
+    INFO
 }

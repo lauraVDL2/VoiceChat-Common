@@ -5,5 +5,6 @@ public enum ServerResponseMessage {
     USER_LOGGED_IN,
     USER_SEARCHED,
     CONVERSATION_CREATED,
+    CONVERSATION_SEARCHED,
     MESSAGE_SENT
 }
