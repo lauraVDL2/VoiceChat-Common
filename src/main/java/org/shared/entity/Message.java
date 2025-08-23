@@ -7,12 +7,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @NodeEntity
 public class Message {
     @Id
     @GeneratedValue
-    @JsonProperty("id")
     private Long id;
 
     @Property("time")
@@ -22,10 +20,8 @@ public class Message {
     private String content;
 
     @Relationship(value = "READ_BY", direction = Relationship.Direction.INCOMING)
-    @JsonManagedReference("messageReference")
     private List<ReadStatus> readStatuses = new ArrayList<>();
 
-    @JsonCreator
     public Message() {
 
     }

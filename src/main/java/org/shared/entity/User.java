@@ -9,7 +9,6 @@ import org.neo4j.ogm.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @NodeEntity
 public class User {
 
@@ -39,7 +38,6 @@ public class User {
     /*@Relationship(type = "IN_CONVERSATION")
     private List<Conversation> conversation = new ArrayList<>();*/
 
-    @JsonCreator
     public User() {}
 
     public User(String emailAddress, String displayName, String password) {

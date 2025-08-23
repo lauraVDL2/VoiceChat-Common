@@ -1,6 +1,5 @@
 package org.shared.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import org.neo4j.ogm.annotation.*;
 
@@ -15,14 +14,11 @@ public class ReadStatus {
     private boolean isRead;
 
     @StartNode
-    @JsonBackReference("messageReference")
     private Message message;
 
     @EndNode
-    @JsonBackReference("userReference")
     private User user;
 
-    @JsonCreator
     public ReadStatus() {
 
     }

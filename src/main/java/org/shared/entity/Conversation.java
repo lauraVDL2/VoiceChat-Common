@@ -17,7 +17,6 @@ public class Conversation {
 
     @Id
     @GeneratedValue
-    @JsonProperty("id")
     private Long id;
 
     @Relationship(type = "CONTAINS", direction = Relationship.Direction.INCOMING)
@@ -26,7 +25,6 @@ public class Conversation {
     @Relationship(type = "PARTICIPATES_IN", direction = Relationship.Direction.OUTGOING)
     private Set<User> participants = new HashSet<>();
 
-    @JsonCreator
     public Conversation() {}
 
     public Conversation(List<Message> messages, Set<User> participants) {
