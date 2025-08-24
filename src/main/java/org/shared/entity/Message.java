@@ -24,8 +24,10 @@ public class Message {
     private String content;
 
     @Relationship(value = "READ_BY", direction = Relationship.Direction.INCOMING)
-    //@JsonManagedReference("messageReference")
     private List<ReadStatus> readStatuses = new ArrayList<>();
+
+    @Relationship(type = "SENT_BY", direction = Relationship.Direction.INCOMING)
+    private User sender;
 
     public Message() {
 
@@ -34,6 +36,12 @@ public class Message {
     public Message(LocalDateTime time, String content) {
         this.time = time;
         this.content = content;
+    }
+
+    public Message(LocalDateTime time, String content, User sender) {
+        this.time = time;
+        this.content = content;
+        this.sender = sender;
     }
 
     public String getContent() {
@@ -62,5 +70,13 @@ public class Message {
 
     public void setReadStatuses(List<ReadStatus> readStatuses) {
         this.readStatuses = readStatuses;
+    }
+
+    public User getSender() {
+        return sender;
+    }
+
+    public void setSender(User sender) {
+        this.sender = sender;
     }
 }

@@ -36,7 +36,7 @@ public class User {
     @Relationship(type = "SENT", direction = Relationship.Direction.OUTGOING)
     private List<Message> messages = new ArrayList<>();
 
-    @Relationship(type = "PARTICIPATES_IN", direction = Relationship.Direction.INCOMING)
+    @Relationship(type = "HAS", direction = Relationship.Direction.INCOMING)
     //@JsonManagedReference("userConversations")
     private List<Conversation> conversation = new ArrayList<>();
 

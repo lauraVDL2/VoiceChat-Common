@@ -28,7 +28,7 @@ public class Conversation {
     @Relationship(type = "CONTAINS", direction = Relationship.Direction.INCOMING)
     private List<Message> messages = new ArrayList<>();
 
-    @Relationship(type = "PARTICIPATES_IN", direction = Relationship.Direction.OUTGOING)
+    @Relationship(type = "HAS", direction = Relationship.Direction.OUTGOING)
     private Set<User> participants = new HashSet<>();
 
     public Conversation() {}
