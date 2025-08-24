@@ -27,6 +27,7 @@ public class User {
     private String password;
 
     @Property(name = "emailAddress")
+    @Index(unique = true)
     private String emailAddress;
 
     @Property(name = "avatar")
