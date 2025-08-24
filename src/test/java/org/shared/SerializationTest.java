@@ -2,6 +2,7 @@ package org.shared;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Test;
 import org.shared.entity.Conversation;
@@ -31,7 +32,8 @@ public class SerializationTest {
     @Test
     void serializeConversation() throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper()
-                .registerModule(new JavaTimeModule());
+                .registerModule(new JavaTimeModule())
+                .enable(SerializationFeature.INDENT_OUTPUT);
         Conversation conversation = new Conversation();
         User user1 = new User();
         user1.setDisplayName("toto");

@@ -15,7 +15,10 @@ import java.util.List;
 import java.util.Set;
 
 @NodeEntity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.UUIDGenerator.class,
+        property = "@json_id"
+)
 public class Conversation {
 
     @Id

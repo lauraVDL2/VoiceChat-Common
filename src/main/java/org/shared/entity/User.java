@@ -1,21 +1,20 @@
 package org.shared.entity;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import org.neo4j.ogm.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @NodeEntity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.UUIDGenerator.class,
+        property = "@json_id"
+)
 public class User {
 
     @Id
     @GeneratedValue
-    @JsonProperty("id")
     private Long id;
 
     @Property(name = "userName")
@@ -33,11 +32,12 @@ public class User {
     @Property(name = "avatar")
     private String avatar;
 
-    @Relationship(type = "SENT", direction = Relationship.Direction.UNDIRECTED)
+    @Relationship(type = "SENT", direction = Relationship.Direction.OUTGOING)
     private List<Message> messages = new ArrayList<>();
 
-    /*@Relationship(type = "IN_CONVERSATION")
-    private List<Conversation> conversation = new ArrayList<>();*/
+    @Relationship(type = "PARTICIPATES_IN", direction = Relationship.Direction.INCOMING)
+    //@JsonManagedReference("userConversations")
+    private List<Conversation> conversation = new ArrayList<>();
 
     public User() {}
 
@@ -52,13 +52,13 @@ public class User {
         this.password = password;
     }
 
-    /*public List<Conversation> getConversation() {
+    public List<Conversation> getConversation() {
         return conversation;
     }
 
     public void setConversation(List<Conversation> conversation) {
         this.conversation = conversation;
-    }*/
+    }
 
     public List<Message> getMessages() {
         return messages;
