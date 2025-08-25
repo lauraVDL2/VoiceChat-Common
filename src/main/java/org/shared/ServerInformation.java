@@ -13,4 +13,12 @@ public class ServerInformation {
 
     }
 
+    public ConcurrentHashMap<String, String> getOnlineUsers() {
+        return onlineUsers;
+    }
+
+    public void setOnlineUsers(ConcurrentHashMap<String, String> onlineUsers) {
+        this.onlineUsers = onlineUsers;
+    }
+
 }
