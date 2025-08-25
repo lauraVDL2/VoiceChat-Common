@@ -13,6 +13,7 @@ import org.shared.entity.User;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -53,6 +54,14 @@ public class SerializationTest {
         assertNotNull(json);
         Conversation conversation1 = objectMapper.readValue(json, Conversation.class);
         assertEquals(conversation1.getMessages().get(0).getContent(), "toto");
+    }
+
+    @Test
+    void serializeOnlineUsers() throws JsonProcessingException {
+        ServerInformation serverInformation = new ServerInformation();
+        ObjectMapper mapper = JsonMapper.getJsonMapper();
+        String json = mapper.writeValueAsString(serverInformation);
+        mapper.readValue(json, ServerInformation.class);
     }
 
 }
