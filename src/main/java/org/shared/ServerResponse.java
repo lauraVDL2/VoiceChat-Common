@@ -5,6 +5,15 @@ public class ServerResponse {
     private ServerResponseMessage serverResponseMessage;
     private String payload;
     private String message;
+    private ServerInformation serverInformation;
+
+    public ServerInformation getServerInformation() {
+        return serverInformation;
+    }
+
+    public void setServerInformation(ServerInformation serverInformation) {
+        this.serverInformation = serverInformation;
+    }
 
     public String getMessage() {
         return message;
