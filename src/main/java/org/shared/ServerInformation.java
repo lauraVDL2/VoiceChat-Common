@@ -7,18 +7,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ServerInformation {
 
-    private ConcurrentHashMap<String, String> onlineUsers = new ConcurrentHashMap<>();
+    public ConcurrentHashMap<String, UserSessionStatus> getOnlineUsers() {
+        return onlineUsers;
+    }
 
     public ServerInformation() {
 
     }
 
-    public ConcurrentHashMap<String, String> getOnlineUsers() {
-        return onlineUsers;
-    }
-
-    public void setOnlineUsers(ConcurrentHashMap<String, String> onlineUsers) {
+    public void setOnlineUsers(ConcurrentHashMap<String, UserSessionStatus> onlineUsers) {
         this.onlineUsers = onlineUsers;
     }
+
+    private ConcurrentHashMap<String, UserSessionStatus> onlineUsers = new ConcurrentHashMap<>();
 
 }
