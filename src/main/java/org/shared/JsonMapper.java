@@ -10,7 +10,8 @@ public class JsonMapper {
 
     private static ObjectMapper objectMapper = new ObjectMapper()
             .registerModule(new JavaTimeModule())
-            .configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+            .configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
+            .configure(SerializationFeature.INDENT_OUTPUT, true);
 
     public static ObjectMapper getJsonMapper() {
         return objectMapper;
