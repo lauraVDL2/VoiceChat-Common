@@ -11,5 +11,6 @@ public enum ServerResponseMessage {
     READ_TARGET_AVATAR,
     CONVERSATION_GET,
     ONLINE_USERS_FETCHED,
-    USER_EXITED
+    USER_EXITED,
+    NEW_MESSAGE_NOTIFIED
 }

@@ -11,5 +11,6 @@ public enum MessageType {
     READ_TARGET_AVATAR,
     CONVERSATION_GET,
     ONLINE_USERS_FETCH,
-    USER_EXIT
+    USER_EXIT,
+    NEW_MESSAGE_NOTIFY
 }
