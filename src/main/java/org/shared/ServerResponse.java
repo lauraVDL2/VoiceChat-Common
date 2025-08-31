@@ -4,6 +4,7 @@ public class ServerResponse {
     private ServerResponseStatus serverResponseStatus;
     private ServerResponseMessage serverResponseMessage;
     private String payload;
+    private byte[] binaryPayload;
     private String message;
     private ServerInformation serverInformation;
 
@@ -46,5 +47,14 @@ public class ServerResponse {
     public void setServerResponseStatus(ServerResponseStatus serverResponseStatus) {
         this.serverResponseStatus = serverResponseStatus;
     }
+
+    public byte[] getBinaryPayload() {
+        return binaryPayload;
+    }
+
+    public void setBinaryPayload(byte[] binaryPayload) {
+        this.binaryPayload = binaryPayload;
+    }
+
 
 }
