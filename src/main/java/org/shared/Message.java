@@ -6,6 +6,8 @@ public class Message {
 
     private String payload;
 
+    private byte[] binaryPayload;
+
     public Message() {}
 
     public Message(MessageType messageType, String payload) {
@@ -27,6 +29,14 @@ public class Message {
 
     public void setMsg(String msg) {
         this.payload = payload;
+    }
+
+    public byte[] getBinaryPayload() {
+        return binaryPayload;
+    }
+
+    public void setBinaryPayload(byte[] binaryPayload) {
+        this.binaryPayload = binaryPayload;
     }
 
 }
