@@ -113,4 +113,7 @@ public class User {
         this.avatar = avatar;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

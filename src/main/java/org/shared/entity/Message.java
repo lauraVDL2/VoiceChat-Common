@@ -79,4 +79,8 @@ public class Message {
     public void setSender(User sender) {
         this.sender = sender;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
