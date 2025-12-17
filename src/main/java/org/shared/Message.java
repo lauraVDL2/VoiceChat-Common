@@ -6,6 +6,8 @@ public class Message {
 
     private String payload;
 
+    private int offset;
+
     private byte[] binaryPayload;
 
     public Message() {}
@@ -39,4 +41,11 @@ public class Message {
         this.binaryPayload = binaryPayload;
     }
 
+    public int getOffset() {
+        return offset;
+    }
+
+    public void setOffset(int offset) {
+        this.offset = offset;
+    }
 }
