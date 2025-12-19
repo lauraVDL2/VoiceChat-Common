@@ -7,6 +7,7 @@ public class ServerResponse {
     private byte[] binaryPayload;
     private String message;
     private ServerInformation serverInformation;
+    private String correlationId;
 
     public ServerInformation getServerInformation() {
         return serverInformation;
@@ -57,4 +58,11 @@ public class ServerResponse {
     }
 
 
+    public String getCorrelationId() {
+        return correlationId;
+    }
+
+    public void setCorrelationId(String correlationId) {
+        this.correlationId = correlationId;
+    }
 }

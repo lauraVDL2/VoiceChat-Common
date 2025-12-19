@@ -10,11 +10,18 @@ public class Message {
 
     private byte[] binaryPayload;
 
+    private String correlationId;
+
     public Message() {}
 
     public Message(MessageType messageType, String payload) {
         this.messageType = messageType;
         this.payload = payload;
+    }
+
+    public Message(MessageType messageType, byte[] binaryPayload) {
+        this.messageType = messageType;
+        this.binaryPayload = binaryPayload;
     }
 
     public MessageType getMessageType() {
@@ -47,5 +54,13 @@ public class Message {
 
     public void setOffset(int offset) {
         this.offset = offset;
+    }
+
+    public String getCorrelationId() {
+        return correlationId;
+    }
+
+    public void setCorrelationId(String correlationId) {
+        this.correlationId = correlationId;
     }
 }
