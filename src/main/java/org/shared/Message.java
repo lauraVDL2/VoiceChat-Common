@@ -1,5 +1,8 @@
 package org.shared;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Message {
 
     private MessageType messageType;
@@ -11,6 +14,8 @@ public class Message {
     private byte[] binaryPayload;
 
     private String correlationId;
+
+    private Map<String, String> userMessageMap = new HashMap<>();
 
     public Message() {}
 
@@ -62,5 +67,13 @@ public class Message {
 
     public void setCorrelationId(String correlationId) {
         this.correlationId = correlationId;
+    }
+
+    public Map<String, String> getUserMessageMap() {
+        return userMessageMap;
+    }
+
+    public void setUserMessageMap(Map<String, String> userMessageMap) {
+        this.userMessageMap = userMessageMap;
     }
 }
