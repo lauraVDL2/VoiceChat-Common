@@ -1,5 +1,8 @@
 package org.shared;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ServerResponse {
     private ServerResponseStatus serverResponseStatus;
     private ServerResponseMessage serverResponseMessage;
@@ -8,6 +11,7 @@ public class ServerResponse {
     private String message;
     private ServerInformation serverInformation;
     private String correlationId;
+    private Map<String, String> userMessageMap = new HashMap<>();
 
     public ServerInformation getServerInformation() {
         return serverInformation;
@@ -64,5 +68,13 @@ public class ServerResponse {
 
     public void setCorrelationId(String correlationId) {
         this.correlationId = correlationId;
+    }
+
+    public Map<String, String> getUserMessageMap() {
+        return userMessageMap;
+    }
+
+    public void setUserMessageMap(Map<String, String> userMessageMap) {
+        this.userMessageMap = userMessageMap;
     }
 }
