@@ -12,6 +12,7 @@ public class ServerResponse {
     private ServerInformation serverInformation;
     private String correlationId;
     private Map<String, String> userMessageMap = new HashMap<>();
+    private int offset;
 
     public ServerInformation getServerInformation() {
         return serverInformation;
@@ -76,5 +77,13 @@ public class ServerResponse {
 
     public void setUserMessageMap(Map<String, String> userMessageMap) {
         this.userMessageMap = userMessageMap;
+    }
+
+    public int getOffset() {
+        return offset;
+    }
+
+    public void setOffset(int offset) {
+        this.offset = offset;
     }
 }
