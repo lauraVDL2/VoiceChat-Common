@@ -5,6 +5,8 @@ public class Authenticate {
     private String url;
     private String code;
 
+    public Authenticate() {}
+
     public Authenticate(String url, String code) {
         this.url = url;
         this.code = code;
