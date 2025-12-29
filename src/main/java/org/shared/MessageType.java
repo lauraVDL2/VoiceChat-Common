@@ -19,5 +19,6 @@ public enum MessageType {
     CALENDAR_GET,
     MICROSOFT_AUTHENTICATE,
     EVENTS_GET,
-    EVENT_CREATE
+    EVENT_CREATE,
+    EVENT_DELETE,
 }
