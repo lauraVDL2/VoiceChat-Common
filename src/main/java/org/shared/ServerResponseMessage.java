@@ -18,5 +18,6 @@ public enum ServerResponseMessage {
     MESSAGE_CONVERSATION_WENT,
     CALENDAR_GET,
     MICROSOFT_AUTHENTICATED,
-    EVENTS_GET
+    EVENTS_GET,
+    EVENT_CREATED
 }

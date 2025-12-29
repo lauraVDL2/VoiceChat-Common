@@ -1,11 +1,16 @@
 package org.shared.mapped_entity;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class VoiceChatEvent {
     private String start;
     private String end;
     private String organizer;
     private Boolean isOnlineMeeting;
     private String subject;
+    private String timezone;
+    private Map<String, String> attendees = new HashMap<>();
 
     public VoiceChatEvent() {
 
@@ -49,5 +54,17 @@ public class VoiceChatEvent {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    public String getTimezone() {
+        return timezone;
+    }
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
+
+    public Map<String, String> getAttendees() {
+        return attendees;
     }
 }
