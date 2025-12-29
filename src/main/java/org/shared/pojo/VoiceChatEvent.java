@@ -1,9 +1,10 @@
-package org.shared.mapped_entity;
+package org.shared.pojo;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class VoiceChatEvent {
+    private String id;
     private String start;
     private String end;
     private String organizer;
@@ -66,5 +67,13 @@ public class VoiceChatEvent {
 
     public Map<String, String> getAttendees() {
         return attendees;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

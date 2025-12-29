@@ -1,4 +1,4 @@
-package org.shared.mapped_entity;
+package org.shared.pojo;
 
 public class VoiceChatCalendar {
     private String ownerEmailAddress;
