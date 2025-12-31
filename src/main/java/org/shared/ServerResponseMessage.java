@@ -21,5 +21,6 @@ public enum ServerResponseMessage {
     EVENTS_GET,
     EVENT_CREATED,
     EVENT_DELETED,
-    MEETING_CONNECTED
+    MEETING_CONNECTED,
+    IS_TALKING
 }
