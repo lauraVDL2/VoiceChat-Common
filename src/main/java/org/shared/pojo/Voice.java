@@ -7,6 +7,7 @@ public class Voice implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Set<String> participants;
+    private String userEmailAddress;
     private byte[] audio;
     private String meetingId;
 
@@ -36,5 +37,13 @@ public class Voice implements Serializable {
 
     public void setMeetingId(String meetingId) {
         this.meetingId = meetingId;
+    }
+
+    public String getUserEmailAddress() {
+        return userEmailAddress;
+    }
+
+    public void setUserEmailAddress(String userEmailAddress) {
+        this.userEmailAddress = userEmailAddress;
     }
 }
