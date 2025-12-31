@@ -8,6 +8,7 @@ public class VoiceChatEvent {
     private String start;
     private String end;
     private String organizer;
+    private String userEmailAddress;
     private Boolean isOnlineMeeting;
     private String subject;
     private String timezone;
@@ -75,5 +76,13 @@ public class VoiceChatEvent {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getUserEmailAddress() {
+        return userEmailAddress;
+    }
+
+    public void setUserEmailAddress(String userEmailAddress) {
+        this.userEmailAddress = userEmailAddress;
     }
 }

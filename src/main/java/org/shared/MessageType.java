@@ -21,4 +21,5 @@ public enum MessageType {
     EVENTS_GET,
     EVENT_CREATE,
     EVENT_DELETE,
+    MEETING_CONNECT
 }

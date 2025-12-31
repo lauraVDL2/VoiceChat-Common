@@ -20,5 +20,6 @@ public enum ServerResponseMessage {
     MICROSOFT_AUTHENTICATED,
     EVENTS_GET,
     EVENT_CREATED,
-    EVENT_DELETED
+    EVENT_DELETED,
+    MEETING_CONNECTED
 }
