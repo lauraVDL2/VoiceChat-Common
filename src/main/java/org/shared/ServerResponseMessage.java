@@ -22,5 +22,6 @@ public enum ServerResponseMessage {
     EVENT_CREATED,
     EVENT_DELETED,
     MEETING_CONNECTED,
-    IS_TALKING
+    IS_TALKING,
+    HAS_CAMERA
 }
