@@ -23,5 +23,6 @@ public enum MessageType {
     EVENT_DELETE,
     MEETING_CONNECT,
     IS_TALKING,
-    HAS_CAMERA
+    HAS_CAMERA,
+    IS_SCREEN_SHARING
 }

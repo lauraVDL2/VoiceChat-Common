@@ -23,5 +23,6 @@ public enum ServerResponseMessage {
     EVENT_DELETED,
     MEETING_CONNECTED,
     IS_TALKING,
-    HAS_CAMERA
+    HAS_CAMERA,
+    IS_SCREEN_SHARING
 }
