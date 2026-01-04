@@ -5,6 +5,7 @@ public class ScreenShare {
     private String meetingId;
     private byte[] frames;
     private Integer totalChunks;
+    private String imageId;
 
     public ScreenShare() {
 
@@ -40,5 +41,13 @@ public class ScreenShare {
 
     public void setTotalChunks(Integer totalChunks) {
         this.totalChunks = totalChunks;
+    }
+
+    public String getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
     }
 }
