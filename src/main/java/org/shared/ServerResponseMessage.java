@@ -24,5 +24,6 @@ public enum ServerResponseMessage {
     MEETING_CONNECTED,
     IS_TALKING,
     HAS_CAMERA,
-    IS_SCREEN_SHARING
+    IS_SCREEN_SHARING,
+    THEME_MODE_SET
 }
