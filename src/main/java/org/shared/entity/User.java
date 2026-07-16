@@ -36,6 +36,9 @@ public class User {
     @Relationship(type = "SENT", direction = Relationship.Direction.OUTGOING)
     private List<Message> messages = new ArrayList<>();
 
+    @Relationship(type = "HAS", direction = Relationship.Direction.OUTGOING)
+    private Settings settings;
+
     @Relationship(type = "HAS", direction = Relationship.Direction.INCOMING)
     //@JsonManagedReference("userConversations")
     private List<Conversation> conversation = new ArrayList<>();
@@ -115,5 +118,13 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Settings getSettings() {
+        return settings;
+    }
+
+    public void setSettings(Settings settings) {
+        this.settings = settings;
     }
 }
