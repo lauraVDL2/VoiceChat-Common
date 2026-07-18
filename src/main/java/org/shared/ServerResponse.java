@@ -1,5 +1,7 @@
 package org.shared;
 
+import org.shared.pojo.Page;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +14,7 @@ public class ServerResponse {
     private ServerInformation serverInformation;
     private String correlationId;
     private Map<String, String> userMessageMap = new HashMap<>();
-    private int offset;
+    private Page page;
 
     public ServerInformation getServerInformation() {
         return serverInformation;
@@ -79,11 +81,11 @@ public class ServerResponse {
         this.userMessageMap = userMessageMap;
     }
 
-    public int getOffset() {
-        return offset;
+    public Page getPage() {
+        return page;
     }
 
-    public void setOffset(int offset) {
-        this.offset = offset;
+    public void setPage(Page page) {
+        this.page = page;
     }
 }
