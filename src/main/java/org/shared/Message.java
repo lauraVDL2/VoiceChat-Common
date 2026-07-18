@@ -1,5 +1,7 @@
 package org.shared;
 
+import org.shared.pojo.Page;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +11,7 @@ public class Message {
 
     private String payload;
 
-    private int offset;
+    private Page page;
 
     private byte[] binaryPayload;
 
@@ -53,14 +55,6 @@ public class Message {
         this.binaryPayload = binaryPayload;
     }
 
-    public int getOffset() {
-        return offset;
-    }
-
-    public void setOffset(int offset) {
-        this.offset = offset;
-    }
-
     public String getCorrelationId() {
         return correlationId;
     }
@@ -75,5 +69,13 @@ public class Message {
 
     public void setUserMessageMap(Map<String, String> userMessageMap) {
         this.userMessageMap = userMessageMap;
+    }
+
+    public Page getPage() {
+        return page;
+    }
+
+    public void setPage(Page page) {
+        this.page = page;
     }
 }
