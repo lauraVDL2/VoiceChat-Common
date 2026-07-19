@@ -3,6 +3,7 @@ package org.shared.pojo;
 public class Page {
     private int offset;
     private int limit;
+    private ScrollDirection scrollDirection;
 
     public Page() {
         this.offset = 0;
@@ -28,5 +29,13 @@ public class Page {
 
     public void setLimit(int limit) {
         this.limit = limit;
+    }
+
+    public ScrollDirection getScrollDirection() {
+        return scrollDirection;
+    }
+
+    public void setScrollDirection(ScrollDirection scrollDirection) {
+        this.scrollDirection = scrollDirection;
     }
 }
