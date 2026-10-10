@@ -5,10 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Test;
-import org.shared.entity.Conversation;
+import org.shared.entity.*;
 import org.shared.entity.Message;
-import org.shared.entity.ReadStatus;
-import org.shared.entity.User;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -62,6 +60,17 @@ public class SerializationTest {
         ObjectMapper mapper = JsonMapper.getJsonMapper();
         String json = mapper.writeValueAsString(serverInformation);
         mapper.readValue(json, ServerInformation.class);
+    }
+
+    @Test
+    void serializeGroup() throws JsonProcessingException {
+        Group group = new Group();
+        group.setName("toto");
+        group.setId(1L);
+        ObjectMapper mapper = JsonMapper.getJsonMapper();
+        String json = mapper.writeValueAsString(group);
+        Conversation conversation = mapper.readValue(json, Conversation.class);
+        assertEquals(group.getId(), conversation.getId());
     }
 
 }

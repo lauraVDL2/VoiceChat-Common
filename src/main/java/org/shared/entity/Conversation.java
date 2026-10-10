@@ -1,9 +1,6 @@
 package org.shared.entity;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
@@ -19,6 +16,11 @@ import java.util.Set;
         generator = ObjectIdGenerators.UUIDGenerator.class,
         property = "@json_id"
 )
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Group.class, name = "group"),
+        @JsonSubTypes.Type(value = Conversation.class, name = "conversation")
+})
 public class Conversation {
 
     @Id
