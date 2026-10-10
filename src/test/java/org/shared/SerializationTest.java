@@ -73,4 +73,28 @@ public class SerializationTest {
         assertEquals(group.getId(), conversation.getId());
     }
 
+    @Test
+    void serializeGroupsInList() throws JsonProcessingException {
+        Group group = new Group();
+        group.setName("toto");
+        group.setId(1L);
+        group.setType("group");
+
+        List<Conversation> conversations = List.of(group);
+
+        ObjectMapper mapper = JsonMapper.getJsonMapper();
+        String json = mapper.writeValueAsString(conversations);
+
+        List<Conversation> deserialized = mapper.readValue(
+                json,
+                mapper.getTypeFactory()
+                        .constructCollectionType(List.class, Conversation.class)
+        );
+
+        assertEquals(1, deserialized.size());
+        assertInstanceOf(Group.class, deserialized.get(0));
+        assertEquals(group.getId(), deserialized.get(0).getId());
+        assertEquals("toto", ((Group) deserialized.get(0)).getName());
+    }
+
 }

@@ -1,10 +1,7 @@
 package org.shared.entity;
 
 import com.fasterxml.jackson.annotation.*;
-import org.neo4j.ogm.annotation.GeneratedValue;
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.NodeEntity;
-import org.neo4j.ogm.annotation.Relationship;
+import org.neo4j.ogm.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -26,6 +23,9 @@ public class Conversation {
     @Id
     @GeneratedValue
     private Long id;
+
+    @Property("type")
+    private String type;
 
     @Relationship(type = "CONTAINS", direction = Relationship.Direction.INCOMING)
     private List<Message> messages = new ArrayList<>();
@@ -62,5 +62,13 @@ public class Conversation {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
