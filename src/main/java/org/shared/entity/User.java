@@ -6,7 +6,7 @@ import org.neo4j.ogm.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@NodeEntity
+@NodeEntity(label = "User")
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.UUIDGenerator.class,
         property = "@json_id"

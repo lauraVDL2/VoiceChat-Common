@@ -7,7 +7,7 @@ import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
 
-@NodeEntity
+@NodeEntity(label = "Settings")
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.UUIDGenerator.class,
         property = "@json_id"

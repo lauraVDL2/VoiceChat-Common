@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@NodeEntity
+@NodeEntity(label = "Message")
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.UUIDGenerator.class,
         property = "@json_id"
